@@ -1,4 +1,4 @@
-## Build CrDroid
+## Build Rising
 
 ### Install the build packages
 
@@ -7,7 +7,7 @@ A [package manager](https://en.wikipedia.org/wiki/Package_manager) in Linux is a
 (usually originating from the Internet) on your computer. With Ubuntu, you can use the Ubuntu Software Center. Even better, you may also use the `apt-get install`
 command directly in the Terminal.
 
-To build CrDroid, you'll need:
+To build Rising, you'll need:
 
 * `bc bison build-essential ccache curl flex g++-multilib gcc-multilib git git-lfs gnupg gperf imagemagick
    lib32ncurses5-dev lib32readline-dev lib32z1-dev libelf-dev liblz4-tool libncurses5 libncurses5-dev
@@ -99,8 +99,12 @@ If compression is enabled, the `ccache` size can be lower (aim for approximately
 Enter the following to initialize the repository:
 
 ```
-cd ~/android/crdroid
-repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
+cd ~/android/rising
+repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs
+
+repo init  --depth=1 -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs
+
+repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android -b fourteen -g default,-mips,-darwin,-notdefault --git-lfs
 ```
 
 ### Import device specific source manifest
@@ -108,7 +112,7 @@ repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
 Enter the following to import device specific source manifest:
 
 ```
-git clone https://github.com/MT6768-Lab/local_manifest --depth 1 -b crdroid-13.0 .repo/local_manifests
+git clone --depth 1 https://github.com/andexzu/Manifest.git -b rising-14 .repo/local_manifests
 ```
 
 ### Download the source code
