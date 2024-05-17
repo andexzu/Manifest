@@ -1,22 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-	<remote name="andexzu" fetch="https://github.com/andexzu"/>
-	<remote name="mt6768-dev" fetch="https://github.com/mt6768-dev"/>
-	<remote name="LineageOS" fetch="https://github.com/LineageOS"/>
+  <!-- Remotes -->
+        <!-- Device RisingOS --> 
+<remote name="andexzu" 
+        fetch="https://github.com/andexzu"
+        sync-c="true"
+        sync-j="4"
+        revision="14.0" 
+        clone-depth="1"/>
+	<!-- Device Kernel Tree -->
+<remote name="Alekseyzu" 
+        fetch="https://gitlab.com/Alekseyzu"
+        sync-c="true"
+        sync-j="4"
+        revision="14" 
+        clone-depth="1"/>
+        <!-- Device LineageOS --> 
+<remote name="LineageOS" 
+        fetch="https://github.com/LineageOS"
+        sync-c="true"
+        sync-j="4"
+        revision="lineage-21" 
+        clone-depth="1"/>
+               <!--Clang --> 
+<remote name="clang" 
+        fetch="https://gitlab.com/Alekseyzu"
+        sync-c="true"
+        sync-j="4"
+        revision="master"
+        clone-depth="1"/>
+  <!-- Sources --> 
 	<!-- Device Trees -->
-	<project path="device/xiaomi/lancelot" name="android_device_xiaomi_lancelot" remote="andexzu" revision="lineage-21"/>
-	<project path="device/xiaomi/mt6768-common" name="android_device_xiaomi_mt6768-common" remote="andexzu" revision="lineage-21"/>
+	<project path="device/xiaomi/lancelot" name="device_xiaomi_lancelot" remote="andexzu" />
+	<project path="device/xiaomi/mt6768-common" name="device_xiaomi_mt6768-common" remote="andexzu" />
 	<!-- Vendor Trees -->
-	<project path="vendor/xiaomi/lancelot" name="proprietary_vendor_xiaomi_lancelot" remote="mt6768-dev" revision="lineage-21"/>
-	<project path="vendor/xiaomi/mt6768-common" name="proprietary_vendor_xiaomi_mt6768-common" remote="mt6768-dev" revision="lineage-21"/>
+	<!--<project path="vendor/xiaomi/lancelot" name="proprietary_vendor_xiaomi_lancelot" remote="LineageOS" />
+	<project path="vendor/xiaomi/mt6768-common" name="proprietary_vendor_xiaomi_mt6768-common" remote="LineageOS" />-->
 	<!-- Kernel Tree -->
-	<project path="kernel/xiaomi/mt6768" name="android_kernel_xiaomi_mt6768" remote="andexzu" revision="lineage-21"/>
+	<project path="kernel/xiaomi/mt6768" name="KernelTree.git" remote="Alekseyzu" />
 	<!-- Hardware -->
-	<project path="hardware/xiaomi" name="android_hardware_xiaomi" remote="LineageOS" revision="lineage-21"/>
-	<project path="hardware/mediatek" name="android_hardware_mediatek" remote="LineageOS" revision="lineage-21"/>
+	<project path="hardware/xiaomi" name="android_hardware_xiaomi" remote="LineageOS" />
+	<project path="hardware/mediatek" name="android_hardware_mediatek" remote="LineageOS" />
 	<!-- Sepolicy -->
-	<project path="device/mediatek/sepolicy_vndr" name="android_device_mediatek_sepolicy_vndr" remote="LineageOS" revision="lineage-21"/>
+	<project path="device/mediatek/sepolicy_vndr" name="android_device_mediatek_sepolicy_vndr" remote="LineageOS" />
+	<!--Clang -->
+        <project path="prebuilts/clang/host/linux-x86/clang-r450784d" name="clang-r450784d" remote="clang" />  
 	<!-- Updater -->
-	<remove-project name="LineageOS/android_packages_apps_Updater"/>
-	<project path="packages/apps/Updater" name="android_packages_apps_Updater" remote="andexzu" revision="lineage-21.0"/>
+	<!--<remove-project name="LineageOS/android_packages_apps_Updater"/>
+	<project path="packages/apps/Updater" name="android_packages_apps_Updater" remote="andexzu" revision="lineage-21.0"/>-->
 </manifest>
