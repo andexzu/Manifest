@@ -112,7 +112,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/androi
 Enter the following to import device specific source manifest:
 
 ```
-git clone https://github.com/andexzu/local_manifest --depth 1 -b crdroid-14.0 .repo/local_manifests
+git clone https://github.com/andexzu/local_manifest.git --depth 1 -b crdroid-14.0 .repo/local_manifests
 ```
 
 ### Download the source code
