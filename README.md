@@ -108,7 +108,8 @@ repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
 Enter the following to import device specific source manifest:
 
 ```
-git clone https://github.com/MT6768-Lab/local_manifest --depth 1 -b crdroid-13.0 .repo/local_manifests
+git clone https://github.com/andexzu/local_manifest --depth 1 -b aosp-fifteen .repo/local_manifests
+
 ```
 
 ### Download the source code
